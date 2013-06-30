@@ -3,8 +3,6 @@ http://review.cyanogenmod.org/#/c/43882/
 http://review.cyanogenmod.org/#/c/44585/
 http://review.cyanogenmod.org/#/c/44586/
 
-http://review.cyanogenmod.org/#/c/32348/
-
 #http://review.cyanogenmod.org/#/c/38222/
 
 http://review.cyanogenmod.org/#/c/34094/
@@ -12,3 +10,18 @@ http://review.cyanogenmod.org/#/c/34094/
 http://review.cyanogenmod.org/#/c/44818/
 
 http://review.cyanogenmod.org/#/c/44955/
+
+# contacts: Improve haptic feedback on dialpad
+http://review.cyanogenmod.org/#/c/44809/
+
+# Workspace and AppList Icon Tap/Touch feedback improvement.
+http://review.cyanogenmod.org/#/c/32873/
+
+# Desktop looping Implementation
+http://review.cyanogenmod.org/#/c/33860/
+
+# JIT: Allow use of cbz/cbnz for conditional branch gen.
+http://review.cyanogenmod.org/#/c/44445/
+
+# JIT: Use rsb and shift in easy multiply.
+http://review.cyanogenmod.org/#/c/44446/

@@ -32,12 +32,12 @@ case "$1" in
         ;;
     auto)
         branches=$(picks "$1")
-        echo "Picking $1:" $branches
+        echo "repopick -b" $branches
         ./build/tools/repopick.py -b $branches
         ;;
     *)
         branches=$(picks "$1")
-        echo "Picking $1:" $branches
+        echo "repopick -s $1" $branches
         ./build/tools/repopick.py -s "$1" $branches
         ;;
 esac
