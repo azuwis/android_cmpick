@@ -8,8 +8,8 @@ function auto_merge()
     repo forall -v -p -c bash -c '
         number_branch=`ls -1 .git/refs/heads/ | wc -l`
         if [ $number_branch -gt 1 ]; then
-            repo start build .
             branches=`ls -1 .git/refs/heads/`
+            repo start build .
             git merge --no-edit --no-ff $branches
         fi
         '
