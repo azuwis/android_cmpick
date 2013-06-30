@@ -1,0 +1,43 @@
+#!/bin/bash
+
+CMPICK_DIR=`dirname $0`
+
+function auto_merge()
+{
+    repo abandon build
+    repo forall -v -p -c bash -c '
+        number_branch=`ls -1 .git/refs/heads/ | wc -l`
+        if [ $number_branch -gt 1 ]; then
+            repo start build .
+            branches=`ls -1 .git/refs/heads/`
+            git merge --no-edit --no-ff $branches
+        fi
+        '
+}
+
+function picks()
+{
+cat $CMPICK_DIR/$1 | while read url
+do
+    if echo $url | grep -q '^#' || [ x"$url" == x ]; then
+        continue
+    fi
+    echo $url | grep -o '[0-9]*'
+done
+}
+
+case "$1" in
+    -m)
+        auto_merge
+        ;;
+    auto)
+        branches=$(picks "$1")
+        echo "Picking $1:" $branches
+        ./build/tools/repopick.py -b $branches
+        ;;
+    *)
+        branches=$(picks "$1")
+        echo "Picking $1:" $branches
+        ./build/tools/repopick.py -s "$1" $branches
+        ;;
+esac
