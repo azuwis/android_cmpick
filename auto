@@ -7,21 +7,23 @@ http://review.cyanogenmod.org/#/c/44586/
 
 http://review.cyanogenmod.org/#/c/34094/
 
-http://review.cyanogenmod.org/#/c/44818/
-
-http://review.cyanogenmod.org/#/c/44955/
-
 # contacts: Improve haptic feedback on dialpad
 http://review.cyanogenmod.org/#/c/44809/
 
 # Workspace and AppList Icon Tap/Touch feedback improvement.
-http://review.cyanogenmod.org/#/c/32873/
-
-# Desktop looping Implementation
-http://review.cyanogenmod.org/#/c/33860/
+#http://review.cyanogenmod.org/#/c/32873/
 
 # JIT: Allow use of cbz/cbnz for conditional branch gen.
 http://review.cyanogenmod.org/#/c/44445/
 
 # JIT: Use rsb and shift in easy multiply.
 http://review.cyanogenmod.org/#/c/44446/
+
+# tuna: Correct bluetooth device name
+http://review.cyanogenmod.org/#/c/36734/
+
+# tuna: Remove audio_effects.conf
+http://review.cyanogenmod.org/#/c/30375/
+
+# Delay closing the notification area after swiping a little closer.
+http://review.cyanogenmod.org/#/c/44972/

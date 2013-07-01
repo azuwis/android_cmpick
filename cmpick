@@ -26,9 +26,24 @@ do
 done
 }
 
+function push_all()
+{
+    repo forall -v -p -c bash -c '
+        if [ -e .git/refs/heads/cm-10.1 ]; then
+            if [ ! -e .git/refs/remotes/azuwis ]; then
+                git remote add azuwis git://github.com/${REPO_PROJECT/CyanogenMod/azuwis}
+            fi
+            git push --force azuwis cm-10.1
+        fi
+        '
+}
+
 case "$1" in
     -m)
         auto_merge
+        ;;
+    -p)
+        push_all
         ;;
     auto)
         branches=$(picks "$1")
