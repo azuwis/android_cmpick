@@ -1,14 +1,18 @@
+# Phone: Disable accelerometer sensor while in-call and screen UI is off
 http://review.cyanogenmod.org/#/c/43882/
 
+# Storage Settings: Allow user to trigger a volume rescan
 http://review.cyanogenmod.org/#/c/44585/
 http://review.cyanogenmod.org/#/c/44586/
 
+# Pie controls: Reduce observer footprint of PieController
 #http://review.cyanogenmod.org/#/c/38222/
 
+# Mms: Add the ability to select recipients from a checkbox list
 http://review.cyanogenmod.org/#/c/34094/
 
 # contacts: Improve haptic feedback on dialpad
-http://review.cyanogenmod.org/#/c/44809/
+#http://review.cyanogenmod.org/#/c/44809/
 
 # Workspace and AppList Icon Tap/Touch feedback improvement.
 #http://review.cyanogenmod.org/#/c/32873/
@@ -25,5 +29,11 @@ http://review.cyanogenmod.org/#/c/36734/
 # tuna: Remove audio_effects.conf
 http://review.cyanogenmod.org/#/c/30375/
 
-# Delay closing the notification area after swiping a little closer.
-http://review.cyanogenmod.org/#/c/44972/
+# PIE: Frameworks: change trigger detection calculation
+#http://review.cyanogenmod.org/#/c/37555/
+
+# Settings: Introduce Privacy Guard Manager
+http://review.cyanogenmod.org/#/c/45021/
+
+# Clock: Feature: Bedtime calculator
+http://review.cyanogenmod.org/#/c/34454/
