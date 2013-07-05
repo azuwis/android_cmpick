@@ -4,11 +4,17 @@ CMPICK_DIR=`dirname $0`
 
 function auto_merge()
 {
-    repo abandon build
     repo forall -v -p -c bash -c '
-        number_branch=`ls -1 .git/refs/heads/ | wc -l`
+        number_branch=`ls -1 .git/refs/heads/ | grep -Fxv build | grep -v test | wc -l`
         if [ $number_branch -gt 1 ]; then
-            branches=`ls -1 .git/refs/heads/`
+            branches=`ls -1 .git/refs/heads/ | grep -Fxv build |grep -v test`
+            if [ -e .git/refs/heads/build ]; then
+                git checkout build
+                if git merge --ff-only $branches; then
+                    exit 0
+                fi
+                repo abandon build
+            fi
             repo start build .
             git merge --no-edit --no-ff $branches
         fi
