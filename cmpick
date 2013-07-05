@@ -39,7 +39,10 @@ function push_all()
             if [ ! -e .git/refs/remotes/azuwis ]; then
                 git remote add azuwis git://github.com/${REPO_PROJECT/CyanogenMod/azuwis}
             fi
-            git push --force azuwis cm-10.1
+            for i in `ls -1 .git/refs/heads/ | grep -Fxv build | grep -Fvv auto`
+            do
+                git push --force azuwis $i
+            done
         fi
         '
 }
