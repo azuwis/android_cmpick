@@ -1,10 +1,3 @@
-# Phone: Disable accelerometer sensor while in-call and screen UI is off
-http://review.cyanogenmod.org/#/c/43882/
-
-# Storage Settings: Allow user to trigger a volume rescan
-http://review.cyanogenmod.org/#/c/44585/
-http://review.cyanogenmod.org/#/c/44586/
-
 # Pie controls: Reduce observer footprint of PieController
 #http://review.cyanogenmod.org/#/c/38222/
 
@@ -32,8 +25,11 @@ http://review.cyanogenmod.org/#/c/30375/
 # PIE: Frameworks: change trigger detection calculation
 #http://review.cyanogenmod.org/#/c/37555/
 
-# Settings: Introduce Privacy Guard Manager
-http://review.cyanogenmod.org/#/c/45021/
-
 # Clock: Feature: Bedtime calculator
-http://review.cyanogenmod.org/#/c/34454/
+#http://review.cyanogenmod.org/#/c/34454/
+
+# Revert "CallTracker: Add delay to reduce cpu load"
+http://review.cyanogenmod.org/#/c/45108/
+
+# BT: Fix memory leak when BT on & off done many times
+http://review.cyanogenmod.org/#/c/45090/
