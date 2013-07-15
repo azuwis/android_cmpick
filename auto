@@ -28,8 +28,8 @@ http://review.cyanogenmod.org/#/c/30375/
 # Clock: Feature: Bedtime calculator
 #http://review.cyanogenmod.org/#/c/34454/
 
-# Revert "CallTracker: Add delay to reduce cpu load"
-http://review.cyanogenmod.org/#/c/45108/
-
 # BT: Fix memory leak when BT on & off done many times
 http://review.cyanogenmod.org/#/c/45090/
+
+# Improve notification shade collapse code.
+http://review.cyanogenmod.org/#/c/45551/
