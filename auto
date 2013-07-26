@@ -10,11 +10,8 @@ http://review.cyanogenmod.org/#/c/34094/
 # Workspace and AppList Icon Tap/Touch feedback improvement.
 #http://review.cyanogenmod.org/#/c/32873/
 
-# JIT: Allow use of cbz/cbnz for conditional branch gen.
-http://review.cyanogenmod.org/#/c/44445/
-
 # JIT: Use rsb and shift in easy multiply.
-http://review.cyanogenmod.org/#/c/44446/
+#http://review.cyanogenmod.org/#/c/44446/
 
 # tuna: Correct bluetooth device name
 http://review.cyanogenmod.org/#/c/36734/
@@ -28,8 +25,23 @@ http://review.cyanogenmod.org/#/c/30375/
 # Clock: Feature: Bedtime calculator
 #http://review.cyanogenmod.org/#/c/34454/
 
-# BT: Fix memory leak when BT on & off done many times
-http://review.cyanogenmod.org/#/c/45090/
-
 # Improve notification shade collapse code.
 http://review.cyanogenmod.org/#/c/45551/
+
+# Make notification-shade-collapse-after-dismiss behaviour configurable.
+#http://review.cyanogenmod.org/#/c/45593/
+
+# Make notification-shade-collapse-after-dismiss behaviour configurable.
+#http://review.cyanogenmod.org/#/c/45592/
+
+# Settings: AutoSmsReply while in QuietHours
+http://review.cyanogenmod.org/#/c/45350/
+
+# Call log based T9 sorting in dialer
+http://review.cyanogenmod.org/#/c/45644/
+
+# Make it possible to hangup and dialback from IncallScreen
+http://review.cyanogenmod.org/#/c/44780/
+
+# Navigation bar improvements (WIP)
+http://review.cyanogenmod.org/#/c/44407/
