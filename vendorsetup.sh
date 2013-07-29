@@ -1,5 +1,57 @@
 #!/bin/bash
 
+function echochanged()
+{
+    local func=$1
+    shift
+
+    $func $* | tee $OUT/.log
+
+    # Install: <file>
+    LOC=$(cat $OUT/.log | sed -r 's/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g' | grep 'Install' | cut -d ':' -f 2)
+
+    # Copy: <file>
+    LOC=$LOC $(cat $OUT/.log | sed -r 's/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g' | grep 'Copy' | cut -d ':' -f 2)
+
+    for FILE in $LOC; do
+        # Get target file name (i.e. system/bin/adb)
+        TARGET=$(echo $FILE | sed "s#$OUT/##")
+
+        # Don't send files that are not in /system.
+        if ! echo $TARGET | egrep '^system\/' > /dev/null ; then
+            continue
+        elif echo $TARGET | egrep '^system\/(usr\/share\/vim|etc\/(nano|bash))\/' > /dev/null; then
+            continue
+        else
+            echo "adb push $FILE $TARGET"
+        fi
+    done
+    rm -f $OUT/.log
+    return 0
+}
+
+function repolog() {
+    T=$(gettop)
+    if [ x"$1" == x"sync" ]; then
+        repo sync -n -j16  2>&1 | tee $T/out/.synclog
+    else
+        cat $T/out/.synclog |  while read a b c
+        do
+            if [ x"$a" == x"From" ]; then
+                project=`echo $b | sed 's/git:\/\/[^/]*\///'`
+                dir=`repo list | awk -F': ' '{if ($2 == "'$project'") print $1}'`
+            elif echo $b | grep -q '^cm-'; then
+                change=$a
+                pushd $dir >&/dev/null
+                echo -e "\033[32mPROJECT: $dir BRANCH: $b"
+                git log --stat --color=always $change "$@"
+                popd >&/dev/null
+                echo
+            fi
+        done | less -R
+    fi
+}
+
 function repomerge()
 {
     repo forall "$@" -v -p -c bash -c '
