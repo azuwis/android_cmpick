@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="azuwis/android_vendor_azuwis" path="vendor/azuwis" remote="github" />
+</manifest>
