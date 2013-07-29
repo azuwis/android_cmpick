@@ -94,7 +94,7 @@ function repopush()
             if [ ! -e .git/refs/remotes/azuwis ]; then
                 git remote add azuwis git://github.com/${REPO_PROJECT/CyanogenMod/azuwis}
             fi
-            for i in `ls -1 .git/refs/heads/ | grep -vE "^(build|auto)$"
+            for i in `ls -1 .git/refs/heads/ | grep -vE "^(build|auto)$"`
             do
                 git push --force azuwis $i
             done
