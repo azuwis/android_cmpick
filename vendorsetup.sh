@@ -90,7 +90,7 @@ function repomerge()
 function repopush()
 {
     repo forall "$@" -v -p -c bash -c '
-        if [ -e .git/refs/heads/* ]; then
+        if [ x"$(ls -1 .git/refs/heads/)" != x ]; then
             if [ ! -e .git/refs/remotes/azuwis ]; then
                 git remote add azuwis git://github.com/${REPO_PROJECT/CyanogenMod/azuwis}
             fi
