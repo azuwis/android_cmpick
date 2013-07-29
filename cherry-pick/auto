@@ -14,10 +14,10 @@ http://review.cyanogenmod.org/#/c/34094/
 #http://review.cyanogenmod.org/#/c/44446/
 
 # tuna: Correct bluetooth device name
-http://review.cyanogenmod.org/#/c/36734/
+#http://review.cyanogenmod.org/#/c/36734/
 
 # tuna: Remove audio_effects.conf
-http://review.cyanogenmod.org/#/c/30375/
+#http://review.cyanogenmod.org/#/c/30375/
 
 # PIE: Frameworks: change trigger detection calculation
 #http://review.cyanogenmod.org/#/c/37555/
@@ -26,7 +26,7 @@ http://review.cyanogenmod.org/#/c/30375/
 #http://review.cyanogenmod.org/#/c/34454/
 
 # Improve notification shade collapse code.
-http://review.cyanogenmod.org/#/c/45551/
+#http://review.cyanogenmod.org/#/c/45551/
 
 # Make notification-shade-collapse-after-dismiss behaviour configurable.
 #http://review.cyanogenmod.org/#/c/45593/
@@ -35,13 +35,13 @@ http://review.cyanogenmod.org/#/c/45551/
 #http://review.cyanogenmod.org/#/c/45592/
 
 # Settings: AutoSmsReply while in QuietHours
-http://review.cyanogenmod.org/#/c/45350/
+#http://review.cyanogenmod.org/#/c/45350/
 
 # Call log based T9 sorting in dialer
-http://review.cyanogenmod.org/#/c/45644/
+#http://review.cyanogenmod.org/#/c/45644/
 
 # Make it possible to hangup and dialback from IncallScreen
-http://review.cyanogenmod.org/#/c/44780/
+#http://review.cyanogenmod.org/#/c/44780/
 
 # Navigation bar improvements (WIP)
-http://review.cyanogenmod.org/#/c/44407/
+#http://review.cyanogenmod.org/#/c/44407/
