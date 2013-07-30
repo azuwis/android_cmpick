@@ -94,12 +94,19 @@ function repomerge()
 function repopush()
 {
     repo forall "$@" -v -p -c bash -c '
-        if [ x"$(ls -1 .git/refs/heads/)" != x ]; then
-            if [ ! -e .git/refs/remotes/azuwis ]; then
+        branches=`ls -1 .git/refs/heads/ | grep -vE "^(build|auto)$"`
+        if [ $(echo $branches | wc -w) -gt 0 ]; then
+            if ! git remote | grep -qFx azuwis; then
                 git remote add azuwis git://github.com/${REPO_PROJECT/CyanogenMod/azuwis}
             fi
-            for i in `ls -1 .git/refs/heads/ | grep -vE "^(build|auto)$"`
+            for i in $branches
             do
+                # test if push needed
+                if [ -e .git/refs/remotes/azuwis/$i ]; then
+                    if [ $(git --no-pager log --oneline azuwis/$i..$i -- | wc -l) -eq 0 ]; then
+                        exit 0
+                    fi
+                fi
                 git push --force azuwis $i
             done
         fi
