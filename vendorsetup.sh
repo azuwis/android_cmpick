@@ -32,6 +32,10 @@ function echochanged()
 
 function repolog() {
     T=$(gettop)
+    if [ x"$T" == x ]; then
+        echo "try run \`. build/envsetup.sh\` first"
+        exit 1
+    fi
     if [ x"$1" == x"sync" ]; then
         repo sync -n -j16  2>&1 | tee $T/out/.synclog
     else
