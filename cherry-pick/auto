@@ -4,20 +4,11 @@
 # Mms: Add the ability to select recipients from a checkbox list
 http://review.cyanogenmod.org/#/c/34094/
 
-# contacts: Improve haptic feedback on dialpad
-#http://review.cyanogenmod.org/#/c/44809/
-
 # Workspace and AppList Icon Tap/Touch feedback improvement.
 #http://review.cyanogenmod.org/#/c/32873/
 
-# JIT: Use rsb and shift in easy multiply.
-#http://review.cyanogenmod.org/#/c/44446/
-
 # tuna: Correct bluetooth device name
 #http://review.cyanogenmod.org/#/c/36734/
-
-# tuna: Remove audio_effects.conf
-#http://review.cyanogenmod.org/#/c/30375/
 
 # PIE: Frameworks: change trigger detection calculation
 #http://review.cyanogenmod.org/#/c/37555/
@@ -26,13 +17,7 @@ http://review.cyanogenmod.org/#/c/34094/
 #http://review.cyanogenmod.org/#/c/34454/
 
 # Improve notification shade collapse code.
-#http://review.cyanogenmod.org/#/c/45551/
-
-# Make notification-shade-collapse-after-dismiss behaviour configurable.
-#http://review.cyanogenmod.org/#/c/45593/
-
-# Make notification-shade-collapse-after-dismiss behaviour configurable.
-#http://review.cyanogenmod.org/#/c/45592/
+http://review.cyanogenmod.org/#/c/46351/
 
 # Settings: AutoSmsReply while in QuietHours
 #http://review.cyanogenmod.org/#/c/45350/
@@ -45,3 +30,18 @@ http://review.cyanogenmod.org/#/c/34094/
 
 # Navigation bar improvements (WIP)
 #http://review.cyanogenmod.org/#/c/44407/
+
+# Add support for new remote control interfaces in API 18.
+http://review.cyanogenmod.org/#/c/46393/
+
+# Call clipboard change listeners outside the setPrimaryClip transaction
+http://review.cyanogenmod.org/#/c/46175/
+
+# Revert "Turn off BLE, GATT, and SMP of Bluetooth stack"
+http://review.cyanogenmod.org/#/c/46448/
+
+# Revert "Turn off BLE, GATT, and SMP of Bluetooth stack"
+http://review.cyanogenmod.org/#/c/46446/
+
+# Apollo: Make albums with the same name to use respective album-art/date/etc.
+http://review.cyanogenmod.org/#/c/46234/
