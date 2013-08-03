@@ -41,6 +41,8 @@ function repolog() {
     else
         cat $T/out/.synclog |  while read a b c
         do
+            pushd $T >&/dev/null
+            # TODO: fix force update(+ xx..xx cm-10.2 ...)
             if [ x"$a" == x"From" ]; then
                 project=`echo $b | sed 's/git:\/\/[^/]*\///'`
                 dir=`repo list | awk -F': ' '{if ($2 == "'$project'") print $1}'`
@@ -48,10 +50,11 @@ function repolog() {
                 change=$a
                 pushd $dir >&/dev/null
                 echo -e "\033[32mPROJECT: $dir BRANCH: $b"
-                git log --stat --color=always $change "$@"
+                git log --stat --no-merges --color=always $change "$@"
                 popd >&/dev/null
                 echo
             fi
+            popd >&/dev/null
         done | less -R
     fi
 }
