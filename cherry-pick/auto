@@ -1,12 +1,6 @@
 # Pie controls: Reduce observer footprint of PieController
 #http://review.cyanogenmod.org/#/c/38222/
 
-# Mms: Add the ability to select recipients from a checkbox list
-http://review.cyanogenmod.org/#/c/34094/
-
-# Workspace and AppList Icon Tap/Touch feedback improvement.
-#http://review.cyanogenmod.org/#/c/32873/
-
 # tuna: Correct bluetooth device name
 #http://review.cyanogenmod.org/#/c/36734/
 
@@ -15,9 +9,6 @@ http://review.cyanogenmod.org/#/c/34094/
 
 # Clock: Feature: Bedtime calculator
 #http://review.cyanogenmod.org/#/c/34454/
-
-# Improve notification shade collapse code.
-http://review.cyanogenmod.org/#/c/46351/
 
 # Settings: AutoSmsReply while in QuietHours
 #http://review.cyanogenmod.org/#/c/45350/
@@ -37,11 +28,14 @@ http://review.cyanogenmod.org/#/c/46393/
 # Call clipboard change listeners outside the setPrimaryClip transaction
 http://review.cyanogenmod.org/#/c/46175/
 
-# Revert "Turn off BLE, GATT, and SMP of Bluetooth stack"
-http://review.cyanogenmod.org/#/c/46448/
+# Enable Bluetooth 4.0 (BLE) for tuna-based devices
+http://review.cyanogenmod.org/#/c/46546/
 
-# Revert "Turn off BLE, GATT, and SMP of Bluetooth stack"
-http://review.cyanogenmod.org/#/c/46446/
+# Enable BLE (Bluetooth Smart 4.0) for Galaxy Nexus
+http://review.cyanogenmod.org/#/c/46543/
 
-# Apollo: Make albums with the same name to use respective album-art/date/etc.
-http://review.cyanogenmod.org/#/c/46234/
+# Enable contact photo preloading.
+http://review.cyanogenmod.org/#/c/46386/
+
+# Mms: Add the ability to select recipients from a checkbox list
+http://review.cyanogenmod.org/#/c/46805/
