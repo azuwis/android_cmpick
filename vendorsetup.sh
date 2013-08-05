@@ -30,6 +30,26 @@ function echochanged()
     return 0
 }
 
+function repolog_filter() {
+perl -e '
+use strict;
+use warnings;
+
+$/ = "\n/\n";
+<>;
+
+while (<>) {
+    my ($commit, @files) = split /\n/, $_;
+
+    #print @files;
+
+    if (grep { $_ && $_ !~ m[^(/$|res/values.*/.*strings\.xml)] } @files) {
+        print "$commit\n";
+    }
+}
+'
+}
+
 function repolog() {
     T=$(gettop)
     if [ x"$T" == x ]; then
@@ -50,7 +70,7 @@ function repolog() {
                 change=$a
                 pushd $dir >&/dev/null
                 echo -e "\033[32mPROJECT: $dir BRANCH: $b"
-                git log --stat --no-merges --color=always $change "$@"
+                git log --no-merges --format="%n/%n%H" --name-only $change | repolog_filter | git log --no-merges --stat --color=always --stdin --no-walk "$@"
                 popd >&/dev/null
                 echo
             fi
