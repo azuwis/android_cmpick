@@ -59,9 +59,9 @@ function repolog() {
     if [ x"$1" == x"sync" ]; then
         repo sync -n -j16  2>&1 | tee $T/out/.synclog
     else
+        pushd $T >&/dev/null
         cat $T/out/.synclog |  while read a b c
         do
-            pushd $T >&/dev/null
             # TODO: fix force update(+ xx..xx cm-10.2 ...)
             if [ x"$a" == x"From" ]; then
                 project=`echo $b | sed 's/git:\/\/[^/]*\///'`
@@ -74,8 +74,8 @@ function repolog() {
                 popd >&/dev/null
                 echo
             fi
-            popd >&/dev/null
         done | less -R
+        popd >&/dev/null
     fi
 }
 
