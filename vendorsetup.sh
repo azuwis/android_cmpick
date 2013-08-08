@@ -69,7 +69,7 @@ function repolog() {
             elif echo $b | grep -q '^cm-'; then
                 change=$a
                 pushd $dir >&/dev/null
-                echo -e "\033[32mPROJECT: $dir BRANCH: $b"
+                echo -e "\033[31mPROJECT: $dir BRANCH: $b"
                 git log --no-merges --format="%n/%n%H" --name-only $change | repolog_filter | git log --no-merges --stat --color=always --stdin --no-walk "$@"
                 popd >&/dev/null
                 echo
