@@ -22,20 +22,34 @@
 # Navigation bar improvements (WIP)
 #http://review.cyanogenmod.org/#/c/44407/
 
-# Add support for new remote control interfaces in API 18.
-http://review.cyanogenmod.org/#/c/46393/
-
 # Call clipboard change listeners outside the setPrimaryClip transaction
 http://review.cyanogenmod.org/#/c/46175/
 
-# Enable Bluetooth 4.0 (BLE) for tuna-based devices
-http://review.cyanogenmod.org/#/c/46546/
-
-# Enable BLE (Bluetooth Smart 4.0) for Galaxy Nexus
-http://review.cyanogenmod.org/#/c/46543/
-
-# Enable contact photo preloading.
-http://review.cyanogenmod.org/#/c/46386/
-
 # Mms: Add the ability to select recipients from a checkbox list
 http://review.cyanogenmod.org/#/c/46805/
+
+# tuna: Add missing SE linux from AOSP
+http://review.cyanogenmod.org/#/c/46990/
+
+# KeyguardViewMediator: Play lock screen sound sooner
+http://review.cyanogenmod.org/#/c/46894/
+
+# Fix issue #7257947: Need to fix heap limits on maguro
+#http://review.cyanogenmod.org/#/c/46375/
+
+# Use a gradient drawable for the tab window background
+http://review.cyanogenmod.org/#/c/47054/
+
+# Status Bar Auto Unhide on Notification When in Fullscreen (S)
+http://review.cyanogenmod.org/#/c/47479/
+# Status Bar Auto Unhide on Notification When in Fullscreen (F)
+http://review.cyanogenmod.org/#/c/47478/
+
+# libc: Add NEON optimized memmove
+http://review.cyanogenmod.org/#/c/47573/
+
+# libc: arch-arm: strlen: Illegal ARM registry entries fixed
+http://review.cyanogenmod.org/#/c/47056/
+
+# Forward-port surface dithering from CM10.1
+http://review.cyanogenmod.org/#/c/46671/
