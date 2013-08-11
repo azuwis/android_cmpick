@@ -41,9 +41,7 @@ $/ = "\n/\n";
 while (<>) {
     my ($commit, @files) = split /\n/, $_;
 
-    #print @files;
-
-    if (grep { $_ && $_ !~ m[^(/$|res/values.*/.*strings\.xml)] } @files) {
+    if (grep { $_ && $_ !~ m[^(/$|.*res/values.*/.*(strings|plurals)\.xml)] } @files) {
         print "$commit\n";
     }
 }
@@ -60,7 +58,7 @@ function repolog() {
         repo sync -n -j16  2>&1 | tee $T/out/.synclog
     else
         pushd $T >&/dev/null
-        cat $T/out/.synclog |  while read a b c
+        cat $T/out/.synclog |  while read a b c d
         do
             # TODO: fix force update(+ xx..xx cm-10.2 ...)
             if [ x"$a" == x"From" ]; then
@@ -70,7 +68,7 @@ function repolog() {
                 change=$a
                 pushd $dir >&/dev/null
                 echo -e "\033[31mPROJECT: $dir BRANCH: $b"
-                git log --no-merges --format="%n/%n%H" --name-only $change | repolog_filter | git log --no-merges --stat --color=always --stdin --no-walk "$@"
+                git log --no-merges --format="%n/%n%H" --name-only $change -- | repolog_filter | git log --no-merges --stat --color=always --stdin --no-walk "$@"
                 popd >&/dev/null
                 echo
             fi
