@@ -41,7 +41,7 @@ $/ = "\n/\n";
 while (<>) {
     my ($commit, @files) = split /\n/, $_;
 
-    if (grep { $_ && $_ !~ m[^(/$|.*res/values.*/.*(strings|plurals)\.xml)] } @files) {
+    if (grep { $_ && $_ !~ m[^(/$|.*res/values.*/.*(arrays|strings|plurals)\.xml)] } @files) {
         print "$commit\n";
     }
 }
