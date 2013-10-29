@@ -1,4 +1,11 @@
 #!/bin/bash
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+
+pathadd $T/vendor/azuwis/bin
 
 function echochanged()
 {
@@ -30,50 +37,26 @@ function echochanged()
     return 0
 }
 
-function repolog_filter() {
-perl -e '
-use strict;
-use warnings;
-
-$/ = "\n/\n";
-<>;
-
-while (<>) {
-    my ($commit, @files) = split /\n/, $_;
-
-    if (grep { $_ && $_ !~ m[^(/$|.*res/values.*/.*(arrays|strings|plurals)\.xml)] } @files) {
-        print "$commit\n";
-    }
-}
-'
-}
 
 function repolog() {
     T=$(gettop)
     if [ x"$T" == x ]; then
         echo "try run \`. build/envsetup.sh\` first"
-        exit 1
+        return
     fi
+    mkdir -p "$T/out"
     if [ x"$1" == x"sync" ]; then
-        repo sync -n -j16  2>&1 | tee $T/out/.synclog
+        repo sync -n -j16
+        touch $T/out/.timestamp
     else
-        pushd $T >&/dev/null
-        cat $T/out/.synclog |  while read a b c d
-        do
-            # TODO: fix force update(+ xx..xx cm-10.2 ...)
-            if [ x"$a" == x"From" ]; then
-                project=`echo $b | sed 's/git:\/\/[^/]*\///'`
-                dir=`repo list | awk -F': ' '{if ($2 == "'$project'") print $1}'`
-            elif echo $b | grep -q '^cm-'; then
-                change=$a
-                pushd $dir >&/dev/null
-                echo -e "\033[31mPROJECT: $dir BRANCH: $b"
-                git log --no-merges --format="%n/%n%H" --name-only $change -- | repolog_filter | git log --no-merges --stat --color=always --stdin --no-walk "$@"
-                popd >&/dev/null
-                echo
-            fi
-        done | less -R
-        popd >&/dev/null
+        repo forall -v -p -c bash -c '
+        T=$1
+        shift
+        if [ .git/refs/remotes/github/cm-10.2 -nt "$T/out/.timestamp" ]; then
+             #git log --no-merges --color github/cm-10.2@{1}..github/cm-10.2 "$@"
+             git log --no-merges --format="%n/%n%H" --name-only github/cm-10.2@{1}..github/cm-10.2 -- | repolog_filter | git log --no-merges --stat --color=always --stdin --no-walk "$@"
+        fi
+        ' -- "$T" "$@"
     fi
 }
 
