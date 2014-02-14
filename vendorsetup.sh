@@ -149,13 +149,12 @@ function get_cm_picks()
 function cmpick()
 {
     branches=$(get_cm_picks "$1")
+    echo "repopick -s $1" $branches
     case "$1" in
         auto)
-            echo "repopick -b" $branches
             repopick -b $branches
             ;;
         *)
-            echo "repopick -s $1" $branches
             repopick -s "$1" $branches
             ;;
     esac
