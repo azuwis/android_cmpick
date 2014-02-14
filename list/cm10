@@ -1,0 +1,15 @@
+bionic
+build
+device/lge/mako
+device/samsung/tuna
+external/libphonenumber
+frameworks/base
+kernel/samsung/tuna
+packages/apps/Bluetooth
+packages/apps/Browser
+packages/apps/Dialer
+packages/apps/Mms
+packages/apps/Phone
+packages/apps/Settings
+vendor/azuwis
+vendor/cm
