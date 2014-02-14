@@ -100,6 +100,7 @@ function repopush()
     repo forall "$@" -v -p -c bash -c '
         branches=`ls -1 .git/refs/heads/ | grep -vE "^(build|auto)$"`
         if [ $(echo $branches | wc -w) -gt 0 ]; then
+            echo pushing...
             if ! git remote | grep -qFx azuwis; then
                 git remote add azuwis git://github.com/${REPO_PROJECT/CyanogenMod/azuwis}
             fi
