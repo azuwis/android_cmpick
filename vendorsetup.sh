@@ -52,9 +52,9 @@ function repolog() {
         repo forall -v -p -c bash -c '
         T=$1
         shift
-        if [ .git/refs/remotes/github/cm-10.2 -nt "$T/out/.timestamp" ]; then
-             #git log --no-merges --color github/cm-10.2@{1}..github/cm-10.2 "$@"
-             git log --no-merges --format="%n/%n%H" --name-only github/cm-10.2@{1}..github/cm-10.2 -- | repolog_filter | git log --no-merges --stat --color=always --stdin --no-walk "$@"
+        if [ .git/refs/remotes/github/cm-11.0 -nt "$T/out/.timestamp" ]; then
+             #git log --no-merges --color github/cm-11.0@{1}..github/cm-11.0 "$@"
+             git log --no-merges --format="%n/%n%H" --name-only github/cm-11.0@{1}..github/cm-11.0 -- | repolog_filter | git log --no-merges --stat --color=always --stdin --no-walk "$@"
         fi
         ' -- "$T" "$@"
     fi
