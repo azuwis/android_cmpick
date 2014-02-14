@@ -118,6 +118,16 @@ function repopush()
         '
 }
 
+function repolist()
+{
+    repo forall "$@" -v -c bash -c '
+        branches=`ls -1 .git/refs/heads/ | grep -vE "^(build|auto)$"`
+        if [ $(echo $branches | wc -w) -gt 0 ]; then
+            echo $REPO_PATH
+        fi
+        '
+}
+
 function repoclean()
 {
     repo checkout cm-11.0
