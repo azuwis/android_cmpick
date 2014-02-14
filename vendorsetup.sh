@@ -118,6 +118,13 @@ function repopush()
         '
 }
 
+function repoclean()
+{
+    repo checkout cm-11.0
+    repo abandon build
+    repo abandon auto
+}
+
 function get_cm_picks()
 {
     cat $(gettop)/vendor/azuwis/cherry-pick/$1 | while read url
