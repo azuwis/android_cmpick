@@ -46,8 +46,8 @@ function repolog() {
     fi
     mkdir -p "$T/out"
     if [ x"$1" == x"sync" ]; then
-        repo sync -n -j16
         touch $T/out/.timestamp
+        repo sync -n -j16
     else
         repo forall -v -p -c bash -c '
         T=$1
