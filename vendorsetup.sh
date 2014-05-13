@@ -143,7 +143,7 @@ function get_cm_picks()
             continue
         fi
         echo $url | grep -o '[0-9]*'
-    done
+    done | sort -n
 }
 
 function cmpick()
