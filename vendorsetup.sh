@@ -159,3 +159,10 @@ function cmpick()
             ;;
     esac
 }
+
+function signtestkey()
+{
+    local T=$(gettop)
+    local apk="$1"
+    java -Xmx2048m -jar $T/prebuilts/sdk/tools/lib/signapk.jar -w $T/build/target/product/security/testkey.x509.pem $T/build/target/product/security/testkey.pk8 "$apk" "${apk/.apk/-signed.apk/}"
+}
