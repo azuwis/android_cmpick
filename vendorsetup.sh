@@ -37,7 +37,6 @@ function echochanged()
     return 0
 }
 
-
 function repolog() {
     T=$(gettop)
     if [ x"$T" == x ]; then
@@ -63,7 +62,7 @@ function repolog() {
 function repomerge()
 {
     repo forall "$@" -v -p -c bash -c '
-        branches=`ls -1 .git/refs/heads/ | grep -vE "^(build$|halo$|test)"`
+        branches=`git for-each-ref --format="%(refname:short)" refs/heads/ | grep -vE "^(build$|halo$|test)"`
         if [ $(echo $branches | wc -w) -lt 2 ]; then
             # less than 2 branch, nothing to do
             exit 0
@@ -98,7 +97,7 @@ function repomerge()
 function repopush()
 {
     repo forall "$@" -v -p -c bash -c '
-        branches=`ls -1 .git/refs/heads/ | grep -vE "^(build|auto)$"`
+        branches=`git for-each-ref --format="%(refname:short)" refs/heads/ | grep -vE "^(build|auto)$"`
         if [ $(echo $branches | wc -w) -gt 0 ]; then
             echo pushing...
             if ! git remote | grep -qFx azuwis; then
@@ -121,7 +120,7 @@ function repopush()
 function repolist()
 {
     repo forall "$@" -v -c bash -c '
-        branches=`ls -1 .git/refs/heads/ | grep -vE "^(build|auto)$"`
+        branches=`git for-each-ref --format="%(refname:short)" refs/heads/ | grep -vE "^(build|auto)$"`
         if [ $(echo $branches | wc -w) -gt 0 ]; then
             echo $REPO_PATH
         fi
