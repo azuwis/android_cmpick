@@ -1,18 +1,53 @@
-# PhoneWindowManager: add ability to use EdgeGestureService for system gestures.
-http://review.cyanogenmod.org/#/c/53828/
-# Settings: Add preference for EdgeGesture service.
-http://review.cyanogenmod.org/#/c/54887/
-
 # Allow disabling the privacy guard notifcation
-http://review.cyanogenmod.org/#/c/55910/
+#http://review.cyanogenmod.org/#/c/55910/
 # Allow disabling the privacy guard notification
-http://review.cyanogenmod.org/#/c/55909/
-
-# core: add support for translucent volume panel
-http://review.cyanogenmod.org/#/c/59394/
-
-# Trebuchet : Add iconMask/iconBack/iconUpon/iconScale support
-http://review.cyanogenmod.org/#/c/59416/
+#http://review.cyanogenmod.org/#/c/55909/
 
 # su: allow setting alternative default shell
-http://review.cyanogenmod.org/#/c/54969/
+#http://review.cyanogenmod.org/#/c/54969/
+
+# Disable Camera shutter sound [1/3] Credits lion0738
+http://review.cyanogenmod.org/#/c/59147/
+# Disable Camera shutter sound [2/3] Credits lion0738
+http://review.cyanogenmod.org/#/c/59204/
+# Disable Camera shutter sound [3/3] Credits lion0738
+http://review.cyanogenmod.org/#/c/59205/
+
+# Added Power button to available NavigationBar buttons
+http://review.cyanogenmod.org/#/c/64721/
+
+# Add 'OK Google' hotword detection service
+#http://review.cyanogenmod.org/#/c/64835/
+
+# Mute phone when flipped over while ringing.
+http://review.cyanogenmod.org/#/c/65660/
+
+# Add hidden apps [3/3]
+#http://review.cyanogenmod.org/#/c/67655/
+# Add hidden apps [2/3]
+#http://review.cyanogenmod.org/#/c/67657/
+# Add hidden apps [1/3]
+#http://review.cyanogenmod.org/#/c/67654/
+
+# CM Performance profiles
+#http://review.cyanogenmod.org/#/c/69559/
+
+# Call recording service implementation, show recordings and allow playback in call history
+# http://review.cyanogenmod.org/#/c/69849/
+# Add an option in the InCall UI to perform call recording
+# http://review.cyanogenmod.org/#/c/69850/
+# Pass creation time in Call interface so that we can uniquely identify calls in call log
+# http://review.cyanogenmod.org/#/c/69851/
+
+# SystemUI: Always show translucent decor on recents panel
+#http://review.cyanogenmod.org/#/c/69972/
+
+# NFC polling mode (1/3)
+http://review.cyanogenmod.org/#/c/67596/
+# NFC polling mode (2/3)
+http://review.cyanogenmod.org/#/c/67597/
+# NFC polling mode (3/3)
+http://review.cyanogenmod.org/#/c/67598/
+
+# Add App Ops shortcut in app details pane
+http://review.cyanogenmod.org/#/c/72692/
