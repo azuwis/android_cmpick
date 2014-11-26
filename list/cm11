@@ -1,0 +1,10 @@
+build
+external/libphonenumber
+frameworks/base
+frameworks/opt/telephony
+packages/apps/Bluetooth
+packages/apps/Browser
+packages/apps/Dialer
+packages/apps/InCallUI
+packages/apps/Mms
+packages/apps/Settings
